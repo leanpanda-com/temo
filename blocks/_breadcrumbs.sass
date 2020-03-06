@@ -1,0 +1,21 @@
+.breadcrumbs
+  display: flex
+  +vertical-padding(2)
+
+.breadcrumbs__item
+  &:not(:last-child)
+    +margin-right(1)
+
+  &:not(:last-child)    
+    &::after
+      content: ""
+      background-image: image-url("chevron-right.svg")
+      background-repeat: no-repeat
+      width: 8px
+      height: 12px
+      display: inline-block
+      +margin-left(1)
+      vertical-align: middle
+
+.breadcrumbs__link
+  color: $primary-color

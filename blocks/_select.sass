@@ -1,0 +1,23 @@
+.select
+  border: 0
+  +padding(1)
+  +padding-right(2.5)
+  position: relative
+  border: 1px solid $gray-l-color
+  border-radius: 4px
+  background-color: $gray-l-color
+  background-image: image-url("dropdown.svg")
+  background-repeat: no-repeat
+  background-position: calc(100% - 10px) center
+
+  &:hover
+    border: 1px solid $gray-color
+
+  &:focus,
+  &:active
+    border: 1px solid $black-l-color
+
+  &:disabled
+    color: $gray-color
+    background: $gray-l-color
+    border: 1px solid $gray-l-color 

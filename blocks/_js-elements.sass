@@ -1,0 +1,14 @@
+.js-dropdown-link
+  cursor: pointer
+  +padding(.5)
+
+.js-dropdown-arrow
+  transition: .25s
+  
+  &.is-open
+    transform: rotate(180deg)
+
+.js-dropdown-content
+  transition: height .25s ease
+  overflow: hidden
+  // height: 0

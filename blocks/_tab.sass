@@ -1,0 +1,87 @@
+// Bemo Tab component
+//
+// @example usage:
+//  .tab
+//    .tab__item
+//      .tab__item__link
+//    .tab__content
+//      .tab__content__item
+
+.tab
+  +margin-bottom(1)
+  list-style: none
+  
+.tab__item
+  // @extend .card
+  display: inline-block
+  // width: 100%
+  // grid-auto-flow: column
+  // grid-template-columns: repeat( auto-fit , minmax(100px, auto) )
+  +margin-bottom(1)
+  border-radius: 4px
+  overflow: hidden
+  flex-wrap: wrap
+
+.tab__item__link
+  +vertical-padding(1.5)
+  +horizontal-padding(2)
+  background: $white-color
+  display: inline-block
+  box-shadow: 0 0 0 $secondary-color inset
+  transition: box-shadow .25s
+  flex-grow: 1
+  white-space: nowrap
+  position: relative
+  box-shadow: -1px 0 0 $gray-l-color inset
+
+  &::before
+    content: ""
+    position: absolute
+    top: 100%
+    left: 0
+    right: 0
+    height: 1px
+    background: $gray-l-color
+    z-index: 1
+  
+  // &:not(:last-child)
+  //   box-shadow: -1px 0 0 $gray-l-color inset
+
+  &:hover,
+  &:focus,
+  &:active
+    box-shadow: 0 -3px 0 $secondary-color inset
+    color: $black-color
+    text-decoration: none
+
+  &.is-active
+    box-shadow: 0 -3px 0 $secondary-color inset
+
+
+.tab__content
+  @extend .card
+  display: block
+
+.tab__content__item
+  display: none
+  
+  &.is-active
+    display: block
+
+.tab__header
+  @extend .card__header
+.tab__body
+  @extend .card__body
+.tab__footer
+  @extend .card__footer
+
+
+
+
+.tab--small
+  @extend .tab
+  font-size: 11px
+
+  .tab__item__link
+    +vertical-padding(1)
+    +horizontal-padding(.5)

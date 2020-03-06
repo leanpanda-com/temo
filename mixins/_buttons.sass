@@ -1,0 +1,90 @@
+// Button & variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+// sass-lint:disable-all
+@mixin button
+  -webkit-appearance: none
+  border: 0
+  cursor: pointer
+  display: inline-block
+  text-align: center
+  text-decoration: none
+  user-select: none
+  vertical-align: middle
+  white-space: nowrap
+  font-weight: 700
+  background: $white-color
+
+  &:not(:last-child)
+    margin-right: $button-margin-left
+
+  // Share hover and focus styles
+  @include hover-focus
+    text-decoration: none
+
+  &:focus,
+  &.focus
+    outline: 0
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled
+    // opacity: $button-disabled-opacity
+    background-color: $gray-l-color
+    border-color: $gray-l-color
+    color: $gray-color
+
+@mixin button-variant($background, $border, $hover-background: lighten($background, 15%), $hover-border: lighten($background, 15%), $active-background: darken($background, 15%), $active-border: darken($background, 15%))
+  background: $background
+  border-color: $border
+  // color: color-yiq($background)
+  color: $white-color
+
+  @include hover
+    background: $hover-background
+    border-color: $hover-border
+    // color: color-yiq($hover-background)
+    color: $white-color
+
+  &:focus
+    background: $active-background
+    border-color: $active-border
+    color: $white-color
+    
+  &:active
+    background: $background
+    border-color: $border
+    border-top-color: $active-background
+    color: $white-color
+    box-shadow: 0 2px 0 $active-background inset
+
+  // Disabled comes first so active can properly restyle
+  // &.disabled, &:disabled
+  //   background-color: $background
+  //   border-color: $border
+  //   color: color-yiq($background)
+  //   color: $white-color
+
+@mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color)
+  background-color: transparent
+  background-image: none
+  border-color: $color
+  color: $color
+
+  &:hover
+    background-color: $active-background
+    border-color: $active-border
+    color: $color-hover
+
+  &.disabled,
+  &:disabled
+    // background-color: transparent
+    // color: $color
+
+// Button sizes
+@mixin button-size($vertical-padding, $horizontal-padding, $font-size)
+  +font-size($font-size, $font-size)
+  +vertical-padding($vertical-padding)
+  +horizontal-padding($horizontal-padding)
+// sass-lint:enable-all

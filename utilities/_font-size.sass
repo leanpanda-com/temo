@@ -1,0 +1,74 @@
+// Bemo font-size utility class
+//
+
+@each $name in map-keys($font-sizes)
+  $size: map-get($font-sizes, $name)
+
+  .#{$name}
+    +font-size($name)
+
+h1
+  +font-size(beta)
+  font-weight: 300
+
+  +at-breakpoint(desk)
+    +font-size(alpha)
+
+h2
+  +font-size(delta)
+  font-weight: 400
+
+  +at-breakpoint(tab)
+    font-weight: 700
+    +font-size(gamma)
+
+h3
+  +font-size(epsilon)
+
+  +at-breakpoint(tab)
+    +font-size(delta)
+
+h4
+  +font-size(zeta)
+  font-weight: 700
+
+  +at-breakpoint(tab)
+    +font-size(epsilon)
+    font-weight: 400
+
+h5
+  +font-size(zeta)
+  font-weight: 700
+
+h6
+  +font-size(eta)
+  font-weight: 700
+  text-transform: uppercase
+
+b,strong
+  font-weight: 700
+
+p
+  +font-size(regular)
+  font-weight: 400
+
+  &.big
+    +font-size(epsilon)
+
+  &.large
+    +font-size(zeta)
+  
+  &.small
+    +font-size(eta)
+  
+  &.micro
+    +font-size(theta)
+
+blockquote
+  +font-size(gamma)
+  font-style: italic
+
+    
+
+
+

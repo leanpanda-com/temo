@@ -1,0 +1,117 @@
+//use one of the modifier classes (ex: .tooltip--top) not the class .tooltip
+
+.tooltip
+  position: relative
+  
+  &::before
+    display: none
+    content: attr(data-tooltip)
+    white-space: nowrap
+    position: absolute
+    background: #222
+    border-radius: 3px
+    +vertical-padding(.5)
+    +horizontal-padding(1)
+    color: $white-color
+    +font-size(milli) 
+    visibility: hidden
+    opacity: 0
+    transition: .2s
+    z-index: 1
+    transition: .35s
+
+  &::after
+    display: none
+    content: ""
+    position: absolute
+    visibility: hidden
+    opacity: 0
+    transition: .2s
+    height: 0
+    width: 0
+    pointer-events: none
+    border: solid
+    border-color: transparent
+    border-width: 5px
+    z-index: 1
+    transition: .35s
+  
+  &:hover
+    &::before,
+    &::after
+      visibility: visible
+      opacity: 1
+
+  a
+    display: block
+    cursor: pointer
+    transition: .35s
+
+    &:hover
+      opacity: .5
+
+.tooltip--top
+  @extend .tooltip
+
+  &::before
+    display: block
+    transform: translateX(-50%)translateY(-10px)
+    left: 50%
+    bottom: 100%
+
+  &::after
+    display: block
+    left: 50%
+    bottom: 100%
+    transform: translateX(-50%)
+    border-top-color: #222
+    
+
+.tooltip--bottom
+  @extend .tooltip
+
+  &::before
+    display: block
+    transform: translateX(-50%)translateY(10px)
+    left: 50%
+    top: 100%
+
+  &::after
+    display: block
+    left: 50%
+    top: 100%
+    transform: translateX(-50%)
+    border-bottom-color: #222
+
+.tooltip--left
+  @extend .tooltip
+
+  &::before
+    display: block
+    transform: translateY(-50%)translateX(-10px)
+    top: 50%
+    right: 100%
+
+  &::after
+    display: block
+    top: 50%
+    right: 100%
+    transform: translateY(-50%)
+    border-left-color: #222
+
+.tooltip--right
+  @extend .tooltip
+
+  &::before
+    display: block
+    transform: translateY(-50%)translateX(10px)
+    top: 50%
+    left: 100%
+
+  &::after
+    display: block
+    top: 50%
+    left: 100%
+    transform: translateY(-50%)
+    border-right-color: #222
+    

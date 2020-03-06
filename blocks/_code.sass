@@ -1,0 +1,32 @@
+
+.code
+  display: block
+  background-color: $gray-d-color
+  color: $gray-l-color
+  max-width: 100%
+  position: relative
+  border-radius: $card-border-radius
+  +padding(2)
+  position: relative
+
+  +at-breakpoint(lte-tab)
+    display: none
+
+
+  &::after
+    content: "html"
+    background: $black-color
+    +horizontal-padding(1)
+    +padding-top(1)
+    +padding-bottom(.5)
+    border-radius: 0 5px 0 5px
+    color: $gray-l-color
+    position: absolute
+    top: 0
+    right: 0
+    line-height: 1
+    font-family: $typeface-mono
+  
+
+  code
+    display: block

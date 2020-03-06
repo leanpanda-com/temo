@@ -1,0 +1,41 @@
+.switch
+  position: relative
+  display: inline-block
+  width: 35px
+  height: 20px
+
+  input 
+    opacity: 0
+    width: 0
+    height: 0
+
+  .input__custom 
+    position: absolute
+    cursor: pointer
+    width: auto
+    height: auto
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: $gray-l-color
+    transition: .2s
+    border-radius: 50px
+
+    &:before 
+      position: absolute
+      content: ""
+      height: 12px
+      width: 12px
+      left: 4px
+      bottom: 3px
+      background-color: $white-color
+      box-shadow: 0 0 0 1px $gray-color
+      transition: .2s
+      border-radius: 50%
+
+input:checked + .input__custom  
+  &:before 
+    transform: translateX(14px)
+    background-color: $white-color
+    box-shadow: none

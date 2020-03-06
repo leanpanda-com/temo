@@ -1,0 +1,134 @@
+// Bemo Table component
+//
+
+.table__container
+  background-color: $card-base-background
+  box-shadow: $card-base-shadow
+  border-radius: $card-border-radius
+  
+.table
+  background-color: $table-bg // Reset for nesting within parents with `background-color`.
+  border: $table-border-width solid $table-border-color
+  border-collapse: collapse
+  color: $table-color
+  margin-bottom: $table-gutter
+  table-layout: auto
+  width: 100%
+
+  th, td
+    border: $table-border-width solid $table-border-color
+    padding: $table-cell-padding
+    vertical-align: top
+
+  thead th
+    border-bottom: $table-border-width solid $table-border-color
+    text-align: left
+    vertical-align: bottom
+    +font-size(eta)
+    text-transform: uppercase
+
+  tbody + tbody
+    border-top: (2 * $table-border-width) solid $table-border-color
+
+.table--fixed
+  @extend .table
+  table-layout: fixed
+
+// Border versions
+//
+// Add or remove borders all around the table and between all the columns.
+
+.table---bordered
+  @extend .table
+  border: $table-border-width solid $table-border-color
+
+  th, td
+    border: $table-border-width solid $table-border-color
+
+  thead
+    th, td
+      border-bottom-width: 2 * $table-border-width
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table--striped
+  @extend .table
+  tbody tr:nth-of-type(#{$table-striped-order})
+    background-color: $table-accent-bg
+
+.table--scrollable
+  @extend .table
+  display: block
+  overflow-x: auto
+  white-space: nowrap
+
+.table__sticky
+  position: sticky
+  top: 75px
+  z-index: 1
+
+  &:not(:empty)
+    min-height: 55px
+
+.table__top,
+.table__bottom
+  display: flex
+  justify-content: space-between
+  background-color: $white-color
+
+.table__top
+  border-radius: $card-border-radius $card-border-radius 0 0 
+  border-bottom: 3 * $table-border-width solid $table-border-color
+
+.table__bottom
+  border-radius: 0 0 $card-border-radius $card-border-radius 
+  border-top: 3 * $table-border-width solid $table-border-color
+  margin-top: -$table-gutter
+  margin-bottom: $table-gutter
+
+.table__left,
+.table__right,
+  display: flex
+  align-content: stretch
+  flex: 0 0 auto
+  
+  & > *
+    border-left: $table-border-width solid $table-border-color
+    +vertical-padding(1)
+    +horizontal-padding(2)
+
+.table__right
+  margin-left: auto
+
+.table__item
+  flex: 0 0 auto
+  display: flex
+  align-items: center
+
+.table__filter
+  position: relative
+
+  &::after
+    content: ""
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    height: 3px
+    background: $table-border-color
+
+.table__overlay
+  position: absolute  
+  left: 0 
+  right: 0  
+  +vertical-padding(1) 
+  +horizontal-padding(2) 
+  background: $black-l-color
+  display: flex
+  align-items: center
+  color: $white-color
+  z-index: 2
+  
+  

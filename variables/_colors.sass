@@ -1,0 +1,51 @@
+// Bemo variables for Colors variant
+// Use inside blocks, utilities and mixins
+//
+$enable-color-gradients: false !default
+
+// Color variables
+$white-color:         #ffffff !default
+
+$black-l-color:       #3F4C4C !default
+$black-color:         #272F2F !default
+$gray-l-color:        #EEEFF0 !default
+$gray-color:          #AAB2B5 !default
+$gray-d-color:        #3B5960 !default
+
+$error-color:         #c53a33 !default
+$warning-color:       #e8b31b !default
+$info-color:          #6eb5f1 !default
+$success-color:       #4cbd4f !default
+
+// Base map color
+$base-colors:       () !default
+$base-colors:       map-merge(( "white": $white-color, "black": $black-color, "black-l": $black-l-color, "gray-l":  $gray-l-color, "gray":  $gray-color, "gray-d":  $gray-d-color), $base-colors)
+
+// Semantic color
+$semantic-colors:   () !default
+$semantic-colors:   map-merge(("error":  $error-color, "warning":  $warning-color, "info":  $info-color, "success":  $success-color), $base-colors)
+
+
+// Template Color variables
+$primary-color:       #6272DB !default
+$secondary-color:     #F05A28 !default
+
+
+// Insert the custom color schema inside the bemo-colors map
+$bemo-colors:       () !default
+$bemo-colors:       map-merge(( "primary": $primary-color, "secondary": $secondary-color), $bemo-colors)
+
+// derived
+$default-colors:    map-merge($base-colors, $semantic-colors)
+$theme-colors:      map-merge($bemo-colors, $semantic-colors)
+$all-colors:        map-merge($default-colors, $bemo-colors)
+
+$base-body-color: $black-color !default
+$base-body-background: $gray-l-color !default
+
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold: 150 !default
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark:    $black-color !default
+$yiq-text-light:   $white-color !default

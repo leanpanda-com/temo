@@ -1,0 +1,53 @@
+.site-header
+  background: $white-color
+  position: sticky
+  height: 75px
+  top: 0
+  left: 0
+  z-index: 2
+  box-shadow: 0 0 20px -15px $black-l-color
+
+.site-header__inner
+  display: flex
+  align-content: center
+  justify-content: space-between
+  align-items: center
+  height: 100%
+
+.site-header__left,
+.site-header__right
+  +vertical-padding(2)
+  +horizontal-padding(3)
+  display: flex
+  align-items: center
+
+.site-header__left
+  +at-breakpoint(lte-tab)
+    width: 100%
+    justify-content: space-between
+
+.site-header__right
+  +at-breakpoint(lte-tab)
+    display: none
+
+.site-header__links
+  display: flex
+  align-items: center
+
+.site-header__logo
+  width: 30px
+  height: 30px
+  background-size: contain
+  background-repeat: no-repeat
+  background-image: image-url("temo-logo-small.svg")
+  +margin-right(2)
+  
+  +at-breakpoint(lap)
+    display: none
+
+.site-header__menu-open,
+.site-nav__menu-close
+  display: block
+
+  +at-breakpoint(lap)
+    display: none

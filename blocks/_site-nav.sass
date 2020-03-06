@@ -1,0 +1,122 @@
+.site-nav
+  position: relative
+  height: 100%
+
+.site-nav__inner
+  height: 75px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  +padding(2)
+
+  +at-breakpoint(lap)
+    justify-content: center
+  
+.site-nav__logo
+  display: block
+  width: 70px
+  height: 30px
+  background-size: contain
+  background-repeat: no-repeat
+  background-image: image-url("temo-logo.svg")
+
+  +at-breakpoint(lap)
+    width: 100px
+    height: 50px
+
+.site-nav__user
+  background: $gray-l-color
+  +padding(2)
+  position: relative
+
+
+.site-nav__menu
+  // display: none
+  +padding(1.5)
+  max-height: calc( 100% - 150px - 70px)
+  overflow-y: scroll
+  margin-right: 2px
+
+.site-nav__menu__link
+  display: flex
+  justify-content: space-between
+  align-items: center
+  +padding-left(1.5)
+  +vertical-padding(1)
+  +vertical-margin(1.5)
+
+  .dark &
+    color: $white-color
+
+  &:hover,
+  &:focus,
+  &:active
+    text-decoration: none
+    color: $secondary-color
+
+  &.is-active
+    background: $secondary-color
+    color: $white-color
+    border-radius: 10px
+
+.site-nav__menu__icon
+  flex: 0 0 30px
+  width: 30px
+
+.site-nav__menu__arrow
+  flex: 0 0 auto
+
+.site-nav__menu__label
+  flex: 1 1 
+
+.site-nav__submenu
+
+.site-nav__submenu__item
+  +vertical-margin(0)
+  margin-left: 30px
+
+.site-nav__submenu__link
+  @extend .site-nav__menu__link
+  +vertical-margin(0)
+
+.site-nav__footer
+  position: absolute
+  top: auto
+  bottom: 0
+  left: 0
+  right: 0
+  +padding(3)
+  text-align: center
+  border-top: 1px solid $gray-l-color
+
+
+.dark
+  background: $black-color
+  color: $white-color
+
+  .site-nav__user
+    background: $black-l-color
+
+  .site-nav__footer
+    border-top: 1px solid $black-l-color
+  
+  .user__content
+    background: $black-l-color
+  
+  .user__menu__link
+    color: $white-color
+
+  .site-nav__menu__link
+    color: $white-color
+
+  [data-icon]
+    color: $gray-l-color
+
+
+
+// +at-breakpoint(desk)
+//   .site-nav__menu-toggler
+//     display: none
+
+//   .site-nav__menu
+//     display: block

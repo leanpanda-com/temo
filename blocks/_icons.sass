@@ -1,0 +1,38 @@
+.icon__list
+  display: flex
+  align-items: center
+
+  & > * + *
+    +margin-left(1)
+
+  svg
+    width: 20px!important
+    color: $black-l-color
+
+[class*="icon--"]
+  display: inline-block
+  line-height: 1
+  padding: 3px 6px
+  border: 1px solid
+  border-radius: 3px
+  white-space: nowrap
+  height: 100%
+
+[data-icon]
+  width: 20px
+  height: 20px
+  display: inline-block
+  mask-repeat: no-repeat
+  mask-position: center
+  mask-size: contain
+  background: currentcolor
+
+@each $icon, $value in $background-icons
+  [data-icon=#{$icon}]
+    mask-image: image-url($value)
+
+@if $enable-icons-colored
+  @each $color, $value in $semantic-colors
+    .icon--#{$color}
+      color: $value
+
