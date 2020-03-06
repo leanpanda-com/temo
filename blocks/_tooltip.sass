@@ -2,7 +2,7 @@
 
 .tooltip
   position: relative
-  
+
   &::before
     display: none
     content: attr(data-tooltip)
@@ -13,7 +13,7 @@
     +vertical-padding(.5)
     +horizontal-padding(1)
     color: $white-color
-    +font-size(milli) 
+    +font-size(theta)
     visibility: hidden
     opacity: 0
     transition: .2s
@@ -35,7 +35,7 @@
     border-width: 5px
     z-index: 1
     transition: .35s
-  
+
   &:hover
     &::before,
     &::after
@@ -65,7 +65,7 @@
     bottom: 100%
     transform: translateX(-50%)
     border-top-color: #222
-    
+
 
 .tooltip--bottom
   @extend .tooltip
@@ -114,4 +114,3 @@
     left: 100%
     transform: translateY(-50%)
     border-right-color: #222
-    
