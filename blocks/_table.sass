@@ -2,33 +2,89 @@
 //
 
 .table__container
-  background-color: $card-base-background
-  box-shadow: $card-base-shadow
-  border-radius: $card-border-radius
+  +at-breakpoint(lap)
+    background-color: $card-base-background
+    box-shadow: $card-base-shadow
+    border-radius: $card-border-radius
+
   
 .table
-  background-color: $table-bg // Reset for nesting within parents with `background-color`.
-  border: $table-border-width solid $table-border-color
   border-collapse: collapse
   color: $table-color
-  margin-bottom: $table-gutter
   table-layout: auto
   width: 100%
 
-  th, td
+  +at-breakpoint(lap)
+    margin-bottom: $table-gutter
     border: $table-border-width solid $table-border-color
-    padding: $table-cell-padding
-    vertical-align: top
+    background-color: $table-bg // Reset for nesting within parents with `background-color`.
 
-  thead th
-    border-bottom: $table-border-width solid $table-border-color
-    text-align: left
-    vertical-align: bottom
-    +font-size(eta)
-    text-transform: uppercase
+  thead
+    +at-breakpoint(lte-tab)
+      display: none
+
+    th
+      border-bottom: $table-border-width solid $table-border-color
+      text-align: left
+      vertical-align: bottom
+      +font-size(eta)
+      text-transform: uppercase
 
   tbody + tbody
     border-top: (2 * $table-border-width) solid $table-border-color
+
+  tbody
+    +at-breakpoint(lte-tab)
+      display: flex
+      flex-wrap: wrap
+      margin-left: -1%
+
+    +at-breakpoint(eq-palm)
+      display: block
+      margin-left: 0
+  tr
+    +at-breakpoint(lte-tab)
+      flex: 0 1 49%
+      margin-left: 1%
+      display: flex
+      flex-direction: column
+      +margin-bottom(1)
+      background-color: $card-base-background
+      box-shadow: $card-base-shadow
+      border-radius: $card-border-radius
+      overflow: hidden
+
+      +at-breakpoint(eq-palm)
+        flex: 0 1 100%
+        margin-left: 0
+        
+  th, td
+    border-bottom: $table-border-width solid $table-border-color
+    padding: $table-cell-padding
+    vertical-align: top
+
+    +at-breakpoint(lap)
+      border: $table-border-width solid $table-border-color
+
+    &::before
+      +at-breakpoint(lte-tab)
+        content: attr(data-head)
+        display: block
+        font-size: 10px
+        font-weight: 700
+        text-transform: uppercase
+        +margin-bottom(1)
+
+  td 
+    &[data-head="Actions"] 
+      +at-breakpoint(lte-tab)
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        
+        &::before
+          flex: 1 0 100%
+
 
 .table--fixed
   @extend .table
@@ -55,8 +111,9 @@
 
 .table--striped
   @extend .table
-  tbody tr:nth-of-type(#{$table-striped-order})
-    background-color: $table-accent-bg
+  +at-breakpoint(lap)
+    tbody tr:nth-of-type(#{$table-striped-order})
+      background-color: $table-accent-bg
 
 .table--scrollable
   @extend .table
@@ -102,13 +159,24 @@
 .table__right
   margin-left: auto
 
+  +at-breakpoint(lte-tab)
+    display: none
+
+.table__results
+  +at-breakpoint(lte-tab)
+    display: none
+
 .table__item
   flex: 0 0 auto
   display: flex
   align-items: center
+  min-height: 55px
 
 .table__filter
   position: relative
+
+  +at-breakpoint(lte-tab)
+    background: $white-color
 
   &::after
     content: ""
