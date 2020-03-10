@@ -27,12 +27,3 @@
   mask-size: contain
   background: currentcolor
 
-@each $icon, $value in $background-icons
-  [data-icon=#{$icon}]
-    mask-image: image-url($value)
-
-@if $enable-icons-colored
-  @each $color, $value in $semantic-colors
-    .icon--#{$color}
-      color: $value
-
