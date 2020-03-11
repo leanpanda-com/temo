@@ -5,25 +5,45 @@
   & > * + *
     +margin-left(1)
 
-  svg
-    width: 20px!important
-    color: $black-l-color
-
-[class*="icon--"]
-  display: inline-block
-  line-height: 1
-  padding: 3px 6px
-  border: 1px solid
-  border-radius: 3px
-  white-space: nowrap
-  height: 100%
-
-[data-icon]
+.icon
   width: 20px
   height: 20px
-  display: inline-block
   mask-repeat: no-repeat
   mask-position: center
   mask-size: contain
   background: currentcolor
 
+@each $icon, $value in $background-icons
+  [data-icon=#{$icon}]
+    mask-image: image-url($value)
+
+// Icon Sizes
+@if $enable-icon-size
+  .icon--small
+    @extend .icon
+    width: 10px
+    height: 10px
+
+  @if $enable-icon-colored
+    @each $color, $value in $theme-colors
+      .icon--small-#{$color}
+        @extend .icon--small
+        color: $value
+        
+  .icon--big
+    @extend .icon
+    width: 30px
+    height: 30px
+
+  @if $enable-icon-colored
+    @each $color, $value in $theme-colors
+      .icon--big-#{$color}
+        @extend .icon--big
+        color: $value
+        
+// Icon colored
+@if $enable-icon-colored
+  @each $color, $value in $theme-colors
+    .icon--#{$color}
+      @extend .icon
+      color: $value
