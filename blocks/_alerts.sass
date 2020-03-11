@@ -29,41 +29,18 @@
   &:not(:first-child)
     +margin-top(1)
 
-  &::before
-    content: ""
-    width: 30px
-    height: 30px
-    +horizontal-margin(3)
-    mask-repeat: no-repeat
-    mask-position: center
-    mask-size: contain
-
   &.close
     transform: translateX(0)
     height: 0
     margin: 0
 
-.alert__item--info,
-.alert__item--success,
-.alert__item--warning,
-.alert__item--error
-  @extend .alert__item
-  
-.alert__item--info:before
-  background: $info-color
-  mask-image: image-url("info.svg") 
-
-.alert__item--success:before
-  background: $success-color
-  mask-image: image-url("check.svg")
-
-.alert__item--warning:before
-  background: $warning-color
-  mask-image: image-url("exclamation.svg")
-
-.alert__item--error:before
-  background: $error-color
-  mask-image: image-url("times.svg")
+.alert__icon
+  width: 30px
+  height: 30px
+  +horizontal-margin(3)
+  mask-repeat: no-repeat
+  mask-position: center
+  mask-size: contain
 
 .alert__content
   color: $white-color

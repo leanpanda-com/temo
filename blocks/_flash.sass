@@ -9,48 +9,34 @@
   align-items: center
   +margin-bottom(2)
 
-  &::before
-    content: ""
-    width: 30px
-    height: 30px
-    flex: 0 0 30px
-    +margin-right(3)
-    background: rgba($white-color,.5)
+.flash__icon
+  width: 30px
+  height: 30px
+  flex: 0 0 30px
+  +margin-right(3)
+  color: rgba($white-color,.5)
 
-  .flash__content
+.flash__content
+  color: $white-color
+  +font-size(zeta)
+
+.flash__link
+  display: block
+  text-transform: uppercase
+  +font-size(eta)
+  font-weight: bold
+  +margin-top(1)
+  color: rgba($white-color,.75)
+
+  &:hover
+    text-decoration: none
     color: $white-color
-    +font-size(zeta)
-
-  .flash__link
-    display: block
-    text-transform: uppercase
-    +font-size(eta)
-    font-weight: bold
-    +margin-top(1)
-    color: rgba($white-color,.75)
-
-    &:hover
-      text-decoration: none
-      color: $white-color
 
 @if $enable-flash-colored
   @each $color, $value in $notice-colors
     .flash--#{$color}
       @extend .flash
       background: $value
-
-.flash--info:before
-    mask: image-url("info-circle.svg") no-repeat left top/contain
-
-.flash--success:before
-    mask: image-url("check-circle.svg") no-repeat left top/contain
-
-.flash--warning:before
-    mask: image-url("exclamation-circle.svg") no-repeat left top/contain
-
-.flash--error:before
-    mask: image-url("times-circle.svg") no-repeat left top/contain
-  
 
 
 .flash--full
