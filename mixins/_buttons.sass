@@ -7,7 +7,9 @@
   -webkit-appearance: none
   border: 0
   cursor: pointer
-  display: inline-block
+  display: inline-flex
+  justify-content: space-between
+  align-items: center
   text-align: center
   text-decoration: none
   user-select: none
@@ -23,9 +25,13 @@
   @include hover-focus
     text-decoration: none
 
+  &:hover
+    color: $gray-color
+
   &:focus,
   &.focus
     outline: 0
+    box-shadow: 0 2px 0 $gray-l-color inset
 
   // Disabled comes first so active can properly restyle
   &.disabled,
