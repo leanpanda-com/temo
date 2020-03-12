@@ -20,18 +20,49 @@
 .form__field
   +margin-bottom(2)
 
+  &.select
+    display: inline-flex
+    flex-direction: column
+
 .form__label
   +margin-bottom(1)
-  display: block
+  +padding-right(2)
+  word-break: break-word
+  font-weight: bold
+  display: inline-flex 
+  flex-direction: row-reverse
+
+  &.required
+    abbr
+      color: $error-color
+      margin-left: 5px
 
 .form__input
   +font-size(regular)
   +horizontal-padding(1)
-  +vertical-padding(0.5)
-  border: 1px solid $gray-color
+  +vertical-padding(1.5)
+  border: 1px solid $gray-l-color
   border-radius: 0.1rem
   transition: border 0.2s cubic-bezier(.55,0,.1,1)
   width: 100%
+  border-radius: 4px
+
+  &:hover,
+  &:not(:placeholder-shown)
+    border: 1px solid $gray-color
+  
+  // &:not(:placeholder-shown):invalid
+  //   border: 1px solid lighten($error-color,20%)
+  //   background: rgba($error-color,.15)
+  
+  &.disabled
+    color: $black-color
+    background: $gray-l-color
+    border: 1px solid $gray-l-color 
+
+    &:hover,
+    &:not(:placeholder-shown) 
+      border: 1px solid transparent
 
 @each $input in $inputs-list
   #{$input}.form__input

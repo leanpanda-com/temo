@@ -19,17 +19,17 @@ input
     left: 0
     z-index: 1
     
-    &:not([disabled])
-      cursor: pointer
+    // &:not([disabled])
+    //   cursor: pointer
 
-    &:focus ~ .input__label:before
-      color: $base-body-color
+    // &:focus ~ .input__label:before
+    //   color: $base-body-color
 
-    &:active ~ .input__label:before
-      color: $base-body-color
+    // &:active ~ .input__label:before
+    //   color: $base-body-color
 
-    &[disabled] ~ .input__label:before
-      opacity: 0.5
+    // &[disabled] ~ .input__label:before
+    //   opacity: 0.5
       
 
 
@@ -69,12 +69,11 @@ input:checked:disabled + .input__custom
     opacity: 1
 
 
-.input__label
+// .input__label
   // +font-size(eta)
-  display: inline-block
-  word-break: break-word
-  font-weight: bold
-  +padding-left(.5)
+  // display: inline-block
+  // word-break: break-word
+  // font-weight: bold
 
 .input--radio
   @extend .input
@@ -121,47 +120,47 @@ input:checked:disabled + .input__custom
     border: 1px solid $gray-l-color
     border-radius: 4px
   
-    &:hover,
-    &:not(:placeholder-shown)
-      border: 1px solid $gray-color
+    // &:hover,
+    // &:not(:placeholder-shown)
+    //   border: 1px solid $gray-color
     
-    &:focus,
-    &:active
-      border: 1px solid $black-l-color
+    // &:focus,
+    // &:active
+    //   border: 1px solid $black-l-color
     
-    &:disabled
-      color: $black-color
-      background: $gray-l-color
-      border: 1px solid $gray-l-color        
+    // &:disabled
+    //   color: $black-color
+    //   background: $gray-l-color
+    //   border: 1px solid $gray-l-color        
 
-    &:not(:placeholder-shown):invalid
-      border: 1px solid lighten($error-color,20%)
-      background: rgba($error-color,.15)
+    // &:not(:placeholder-shown):invalid
+    //   border: 1px solid lighten($error-color,20%)
+    //   background: rgba($error-color,.15)
     
-    &:placeholder-shown:required
-      box-shadow: 3px 0 0 lighten($error-color,20%)
+    // &:placeholder-shown:required
+    //   box-shadow: 3px 0 0 lighten($error-color,20%)
 
-      & + .input__label
-        +margin-bottom(1)
+    //   & + .input__label
+    //     +margin-bottom(1)
         
-        &::after
-          content: "*"
-          color: $error-color
-          +margin-left(.5)
+    //     &::after
+    //       content: "*"
+    //       color: $error-color
+    //       +margin-left(.5)
 
-    &[type=email],
-    &[type=url],
-    &[type=number],
-    &[type=tel],
-    &[type=date],
-    &[type=datetime-local],
-    &[type=color],
-    &[type=month],
-    &[type=week],
-    &[type=search],
-      &:not(:placeholder-shown):valid:focus
-        border: 1px solid lighten($success-color,20%)
-        background: rgba($success-color,.2)
+    // &[type=email],
+    // &[type=url],
+    // &[type=number],
+    // &[type=tel],
+    // &[type=date],
+    // &[type=datetime-local],
+    // &[type=color],
+    // &[type=month],
+    // &[type=week],
+    // &[type=search],
+    //   &:not(:placeholder-shown):valid:focus
+    //     border: 1px solid lighten($success-color,20%)
+    //     background: rgba($success-color,.2)
   
   .input__label
     +margin-bottom(1)
