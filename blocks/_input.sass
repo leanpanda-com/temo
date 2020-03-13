@@ -33,40 +33,40 @@ input
       
 
 
-.input__custom
-  border: 1px solid $gray-color
-  content: ""
-  display: inline-block
-  height: 16px
-  width: 16px
-  vertical-align: middle
-  position: relative
-  transition: all 0.2s ease
-  cursor: pointer
+// .input__custom
+//   border: 1px solid $gray-color
+//   content: ""
+//   display: inline-block
+//   height: 16px
+//   width: 16px
+//   vertical-align: middle
+//   position: relative
+//   transition: all 0.2s ease
+//   cursor: pointer
 
-  &::after
-    content: ""
-    position: absolute
-    display: block
-    opacity: 0
-    transition: all 0.2s ease
+//   &::after
+//     content: ""
+//     position: absolute
+//     display: block
+//     opacity: 0
+//     transition: all 0.2s ease
 
-input:hover + .input__custom
-  border: 1px solid $black-l-color
+// input:hover + .input__custom
+//   border: 1px solid $black-l-color
 
-input:checked + .input__custom
-  background: $primary-color
-  border: 1px solid $primary-color
-  &::after
-    opacity: 1
+// input:checked + .input__custom
+//   background: $primary-color
+//   border: 1px solid $primary-color
+//   &::after
+//     opacity: 1
 
-input:disabled + .input__custom
-  background: $gray-color
-  border: 1px solid $gray-color
+// input:disabled + .input__custom
+//   background: $gray-color
+//   border: 1px solid $gray-color
 
-input:checked:disabled + .input__custom
-  &::after
-    opacity: 1
+// input:checked:disabled + .input__custom
+//   &::after
+//     opacity: 1
 
 
 // .input__label
@@ -75,50 +75,50 @@ input:checked:disabled + .input__custom
   // word-break: break-word
   // font-weight: bold
 
-.input--radio
-  @extend .input
+// .input--radio
+//   @extend .input
 
-  .input__custom
-    border-radius: 50%
+//   .input__custom
+//     border-radius: 50%
 
-    &:after
-      width: 6px
-      height: 6px
-      top: 4px
-      left: 4px
-      border-radius: 100%
-      background: $white-color
-      transform: scale(0)
+//     &:after
+//       width: 6px
+//       height: 6px
+//       top: 4px
+//       left: 4px
+//       border-radius: 100%
+//       background: $white-color
+//       transform: scale(0)
     
-    &::after
-      transform: scale(1)
+//     &::after
+//       transform: scale(1)
 
-.input--checkbox
-  @extend .input
+// .input--checkbox
+//   @extend .input
 
-  .input__custom
-    border-radius: 3px
+//   .input__custom
+//     border-radius: 3px
 
-    &:after
-      top: 3px
-      left: 3px
-      height: 5px
-      width: 9px
-      transform: rotate(-45deg)
-      border-bottom: 2px solid $white-color
-      border-left: 2px solid $white-color
+//     &:after
+//       top: 3px
+//       left: 3px
+//       height: 5px
+//       width: 9px
+//       transform: rotate(-45deg)
+//       border-bottom: 2px solid $white-color
+//       border-left: 2px solid $white-color
 
 
-.input--text
-  display: flex
-  flex-direction: column-reverse
-  width: 100%
+// .input--text
+//   display: flex
+//   flex-direction: column-reverse
+//   width: 100%
 
-  input
-    +horizontal-padding(1)
-    +vertical-padding(1.5)
-    border: 1px solid $gray-l-color
-    border-radius: 4px
+//   input
+//     +horizontal-padding(1)
+//     +vertical-padding(1.5)
+//     border: 1px solid $gray-l-color
+//     border-radius: 4px
   
     // &:hover,
     // &:not(:placeholder-shown)
@@ -162,47 +162,47 @@ input:checked:disabled + .input__custom
     //     border: 1px solid lighten($success-color,20%)
     //     background: rgba($success-color,.2)
   
-  .input__label
-    +margin-bottom(1)
+  // .input__label
+  //   +margin-bottom(1)
 
-.input--textarea
-  @extend .input--text
+// .input--textarea
+//   @extend .input--text
 
-  textarea
-    +padding(1.5)
-    border: 1px solid $gray-l-color
-    border-radius: 4px
+//   textarea
+//     +padding(1.5)
+//     border: 1px solid $gray-l-color
+//     border-radius: 4px
 
-    &.no--resize
-      resize: none
+//     &.no--resize
+//       resize: none
 
-    &:hover,
-    &:not(:placeholder-shown)
-      border: 1px solid $gray-color
+//     &:hover,
+//     &:not(:placeholder-shown)
+//       border: 1px solid $gray-color
     
-    &:focus,
-    &:active
-      border: 1px solid $black-l-color
+//     &:focus,
+//     &:active
+//       border: 1px solid $black-l-color
     
-    &:disabled
-      color: $black-color
-      background: $gray-l-color
-      border: 1px solid $gray-l-color        
+//     &:disabled
+//       color: $black-color
+//       background: $gray-l-color
+//       border: 1px solid $gray-l-color        
 
-    &:not(:placeholder-shown):invalid
-      border: 1px solid lighten($error-color,20%)
-      background: rgba($error-color,.15)
+//     &:not(:placeholder-shown):invalid
+//       border: 1px solid lighten($error-color,20%)
+//       background: rgba($error-color,.15)
     
-    &:placeholder-shown:required
-      box-shadow: 3px 0 0 lighten($error-color,20%)
+//     &:placeholder-shown:required
+//       box-shadow: 3px 0 0 lighten($error-color,20%)
 
-      & + .input__label
-        +margin-bottom(1)
+//       & + .input__label
+//         +margin-bottom(1)
         
-        &::after
-          content: "*"
-          color: $error-color
-          +margin-left(.5)
+//         &::after
+//           content: "*"
+//           color: $error-color
+//           +margin-left(.5)
 
 .input__group
   display: flex
