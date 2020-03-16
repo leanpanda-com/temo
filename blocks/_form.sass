@@ -27,19 +27,21 @@
 
 .form__label
   +margin-bottom(1)
-  +padding-right(2)
+  // +padding-right(2)
   word-break: break-word
   font-weight: bold
   display: inline-flex 
   flex-direction: row-reverse
   justify-content: flex-end
+  cursor: pointer
+  height: 20px
 
   &.required
     abbr
       color: $error-color
       margin-left: 5px
 
-  &.checkbox
+  &.boolean
     +padding-left(2.5)
     position: relative
 
@@ -71,6 +73,42 @@
       transform: rotate(-45deg)
       border-bottom: 2px solid $white-color
       border-left: 2px solid $white-color
+
+    &:hover::before
+      border: 1px solid $black-l-color
+
+  &.switcher
+    padding-left: 40px
+    position: relative
+
+    &::before
+      content: ""
+      position: absolute
+      cursor: pointer
+      width: auto
+      height: auto
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-color: $gray-l-color
+      border: 1px solid $gray-color
+      transition: .2s
+      border-radius: 50px
+      width: 35px
+      height: 20px
+
+    &::after
+      position: absolute
+      content: ""
+      height: 12px
+      width: 12px
+      left: 4px
+      top: 4px
+      background-color: $white-color
+      box-shadow: 0 0 0 1px $gray-color
+      transition: .2s
+      border-radius: 50%
 
     &:hover::before
       border: 1px solid $black-l-color
@@ -119,6 +157,35 @@
     &:checked:disabled + .form__label::after
         opacity: 1
   
+  &.switcher
+    opacity: 0
+    position: absolute
+    z-index: 1
+    width: 0
+    height: 0
+
+    &:checked + .form__label::before
+      background: $primary-color
+      border: 1px solid $primary-color
+    
+    &:checked + .form__label::after
+      transform: translateX(14px)
+      background-color: $white-color
+      box-shadow: none
+
+    &:disabled + .form__label::before
+      background: $gray-color
+      border: 1px solid $gray-color
+
+    &:disabled + .form__label::after
+      background: $gray-l-color
+
+    &:checked:disabled + .form__label::before
+      background: $gray-color
+
+    &:checked:disabled + .form__label::after
+      background: $primary-color
+  
   &.radio_buttons
     width: auto
     display: inline-block
@@ -144,14 +211,15 @@
 
 
 .radio
+  display: block
   label
-    @extend .form__label.checkbox
+    @extend .form__label.boolean
     &::before     
       border-radius: 50%
     &::after     
       width: 6px
       height: 6px
-      top: 8px
+      top: 7px
       left: 5px
       margin: 0
       border-radius: 100%
