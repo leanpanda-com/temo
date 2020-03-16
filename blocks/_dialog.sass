@@ -16,6 +16,7 @@
     z-index: 1001
 
 .dialog__frame
+  @extend .card
   +center(fixed)
   -webkit-overflow-scrolling: touch
   background-color: white
@@ -27,10 +28,15 @@
   top: 50%
   width: 90%
   z-index: 1002
+  transform: translate(-50%, -50%) scale(0)
+
+  .is-active &
+    transform: translate(-50%, -50%) scale(1)
+
 
 .dialog__header
-  +font-size(alpha)
-  +padding(2)
+  @extend .card__header
+  position: relative
 
 @if $enable-dialog-colored
   @each $color, $value in $all-colors
@@ -42,12 +48,12 @@
         background-color: var(--color-#{$color})
 
 .dialog__body
-  +horizontal-padding(2)
+  @extend .card__body
 
 .dialog__footer
-  +padding(2)
-  text-align: center
+  @extend .card__footer
+  position: relative
 
 .dialog__close
   +position(absolute, 0 0 null null)
-  +padding(2)
+  +padding(1)
