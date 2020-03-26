@@ -2,27 +2,33 @@
   +margin-bottom(1)
   display: inline-block
   height: 100%
-  box-shadow: $card-base-shadow
+  
 
 .subnav__item
   display: inline-block
   position: relative
+  // box-shadow: $card-base-shadow
 
   &:not(:last-child)
-    margin-right: 1px
+    // margin-right: 1px
 
 .subnav__link
   +vertical-padding(1.5)
   +horizontal-padding(2)
-  background: $white-color
+  // background: $white-color
   display: inline-block
   transition: .15s
+  border-bottom: 1px solid $gray-color
 
-  &:hover, 
-  &.is-active
+  &:hover
     text-decoration: none
-    color: $secondary-color
+    box-shadow: -1px 0 0 $gray-l-color inset,0 -3px 0 $secondary-color inset
 
   &:focus, 
   &:active
     text-decoration: none
+
+  &.is-active
+    text-decoration: none
+    color: $secondary-color
+    box-shadow: -1px 0 0 $gray-l-color inset,0 -3px 0 $secondary-color inset
