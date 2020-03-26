@@ -13,28 +13,24 @@
   
 .tab__item
   display: inline-block
-  +margin-bottom(1)
-  flex-wrap: wrap
+  margin-bottom: 1px
 
 .tab__item__link
   +vertical-padding(1.5)
   +horizontal-padding(2)
   background: $white-color
   display: inline-block
-  box-shadow: 0 0 0 $secondary-color inset
-  transition: box-shadow .25s
-  flex-grow: 1
+  transition: box-shadow .15s
   white-space: nowrap
-  position: relative
   box-shadow: -1px 0 0 $gray-l-color inset,0 0 0 $secondary-color inset
   position: relative
   z-index: 1
 
   &:first-child
-    border-radius: 5px 0 0 5px
+    border-radius: 5px 0 0 0
   
   &:last-child
-    border-radius: 0 5px 5px 0
+    border-radius: 0 5px 0 0
 
   &::before
     content: ""
@@ -58,7 +54,9 @@
 
 .tab__content
   @extend .card
+  border-radius: 0 0 5px 5px
   display: block
+  z-index: 1
 
 .tab__content__item
   display: none
