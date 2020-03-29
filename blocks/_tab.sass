@@ -22,7 +22,7 @@
   display: inline-block
   transition: box-shadow .15s
   white-space: nowrap
-  box-shadow: -1px 0 0 $gray-l-color inset,0 0 0 $secondary-color inset
+  box-shadow: -1px 0 0 $gray-l-color inset,0 0 0 $primary-color inset
   position: relative
   z-index: 1
 
@@ -45,13 +45,13 @@
   &:hover,
   &:focus,
   &:active
-    box-shadow: -1px 0 0 $gray-l-color inset,0 -3px 0 $secondary-color inset
+    box-shadow: -1px 0 0 $gray-l-color inset,0 -3px 0 $primary-color inset
     color: $black-color
     text-decoration: none
 
   &.is-active
-    color: $secondary-color
-    box-shadow: -1px 0 0 $gray-l-color inset,0 -3px 0 $secondary-color inset
+    color: $primary-color
+    box-shadow: -1px 0 0 $gray-l-color inset,0 -3px 0 $primary-color inset
 
 .tab__content
   @extend .card
