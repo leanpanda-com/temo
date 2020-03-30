@@ -31,8 +31,17 @@ Add this in `app/javascript/pack/application.js`
 import 'stylesheets/application'
 ```
 
-
 If you need to use simple_form
 ```
 cp vendor/temo/simple_form_initializer.rb config/initializers/simple_form.rb
+```
+
+
+## Configuration
+### Add custom icons
+If you need some additional icons, put the svg file into `app/javascript/stylesheets/images/icons`
+and override this variable into your `application.sass` variable.
+```
+$images-prefix-path: './'
+$custom-background-icons("my-icon":"file-name.svg")
 ```
