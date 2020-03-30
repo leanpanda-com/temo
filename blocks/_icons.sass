@@ -15,7 +15,7 @@
 
 @each $icon, $value in $background-icons
   [data-icon=#{$icon}]
-    mask-image: image-url($value)
+    mask-image: icon-url($value)
 
 // Icon Sizes
 @if $enable-icon-size

@@ -4,10 +4,13 @@
 @function image-url($path)
   @return url('/images/#{$path}')
 
+@function icon-url($path)
+  @return url('/images/icons/#{$path}')
+
 @function font-url($path)
   @return url('/fonts/#{$path}')
 
 // sass-lint:disable indentation
-@each $function-name in image-url font-url
+@each $function-name in image-url font-url icon-url
   @if not function-exists($function-name)
     @warn "Function #{$function-name}() missing, please see functions/_urls.sass for details!"
