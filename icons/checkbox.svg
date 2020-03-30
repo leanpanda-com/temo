@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="6px" viewBox="0 0 8 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon-checkbox</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1"  fill-rule="evenodd">
+        <g id="⚙️/Checkbox/1.3_Selected" transform="translate(-4.000000, -5.000000)" >
+            <path d="M7.0000625,11 C6.7440785,11 6.48809449,10.9020041 6.29310668,10.7070122 L4.29323167,8.70709554 C3.90225611,8.31611183 3.90225611,7.68413816 4.29323167,7.29315445 C4.68420724,6.90217074 5.31616774,6.90217074 5.7071433,7.29315445 L7.0000625,8.58610058 L10.2928567,5.29323778 C10.6838323,4.90225407 11.3157928,4.90225407 11.7067683,5.29323778 C12.0977439,5.68422149 12.0977439,6.31619516 11.7067683,6.70717887 L7.70701831,10.7070122 C7.5120305,10.9020041 7.2560465,11 7.0000625,11" id="icon-checkbox"></path>
+        </g>
+    </g>
+</svg>

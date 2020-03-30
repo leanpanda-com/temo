@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon-paint</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="Sidebar-light" transform="translate(-25.000000, -222.000000)" fill-rule="nonzero">
+            <g transform="translate(0.000000, 0.000000)" id="nav">
+                <g transform="translate(17.000000, 171.000000)">
+                    <g id="li" transform="translate(8.449621, 49.000000)">
+                        <path d="M7.44049969,12.4436325 L13.4235596,6.38647226 C15.4259505,4.18610672 11.7017353,1.23792878 10.0075216,3.65509449 L5.30769227,10.666293 L7.44049969,12.4436325 Z M3.5,16.7499958 C5.5742932,16.7499958 6.99998331,15.5531756 6.99998331,13.4635466 C6.99998331,13.3708611 6.98139815,13.2819941 6.97101075,13.1912046 L4.59018757,11.2071585 C3.48413018,11.2730611 2.47842198,11.6865008 1.90967867,13.1854635 C1.8454317,13.3552667 1.6909292,13.4583663 1.51073859,13.4583663 C1.20694063,13.4583663 0.267695742,12.7017686 0,12.5190947 C0,14.7708631 1.03713742,16.7499958 3.5,16.7499958 Z" id="icon-paint"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
