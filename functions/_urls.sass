@@ -1,14 +1,17 @@
 // If you're outside a Rails environment, you'll need something similar
 // to these functions!
 
+$images-path-prefix: '/' !default
+
+
 @function image-url($path)
-  @return url('/images/#{$path}')
+  @return url('#{$images-path-prefix}images/#{$path}')
 
 @function icon-url($path)
-  @return url('/images/icons/#{$path}')
+  @return url('#{$images-path-prefix}images/icons/#{$path}')
 
 @function font-url($path)
-  @return url('/fonts/#{$path}')
+  @return url('#{$images-path-prefix}fonts/#{$path}')
 
 // sass-lint:disable indentation
 @each $function-name in image-url font-url icon-url
