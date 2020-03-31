@@ -7,7 +7,7 @@
     box-shadow: $card-base-shadow
     border-radius: $card-border-radius
 
-  
+
 .table
   border-collapse: collapse
   color: $table-color
@@ -57,7 +57,7 @@
       +at-breakpoint(eq-palm)
         flex: 0 1 100%
         margin-left: 0
-        
+
   th, td
     border-bottom: $table-border-width solid $table-border-color
     padding: $table-cell-padding
@@ -75,13 +75,13 @@
         text-transform: uppercase
         +margin-bottom(1)
 
-  td 
-    &[data-head="Actions"] 
+  td
+    &[data-head="Actions"]
       +at-breakpoint(lte-tab)
         display: flex
         justify-content: space-between
         flex-wrap: wrap
-        
+
         &::before
           flex: 1 0 100%
 
@@ -136,11 +136,11 @@
   background-color: $white-color
 
 .table__top
-  border-radius: $card-border-radius $card-border-radius 0 0 
+  border-radius: $card-border-radius $card-border-radius 0 0
   border-bottom: 3 * $table-border-width solid $table-border-color
 
 .table__bottom
-  border-radius: 0 0 $card-border-radius $card-border-radius 
+  border-radius: 0 0 $card-border-radius $card-border-radius
   border-top: 3 * $table-border-width solid $table-border-color
   margin-top: -$table-gutter
   margin-bottom: $table-gutter
@@ -150,7 +150,7 @@
   display: flex
   align-content: stretch
   flex: 0 0 auto
-  
+
   & > *
     border-left: $table-border-width solid $table-border-color
     +vertical-padding(1)
@@ -189,15 +189,13 @@
     background: $table-border-color
 
 .table__overlay
-  position: absolute  
-  left: 0 
-  right: 0  
-  +vertical-padding(1) 
-  +horizontal-padding(2) 
+  position: absolute
+  left: 0
+  right: 0
+  +vertical-padding(1)
+  +horizontal-padding(2)
   background: $black-l-color
   display: flex
   align-items: center
   color: $white-color
   z-index: 2
-  
-  
