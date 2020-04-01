@@ -2,9 +2,9 @@
 
 ## Installation
 ### Rails
-Clone the submodule in vendor directory
+Install the submodule in vendor directory
 ```
-git clone git@github.com:cantierecreativo.net/temo.git vendor/temo
+git submodule add git@github.com:cantierecreativo.net/temo.git vendor/temo
 ```
 
 Create a symlink under app/javascript/stylesheets
