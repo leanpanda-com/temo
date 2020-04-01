@@ -52,7 +52,14 @@ If you have some fixes to do in TEMO, you can edit files directly into your subm
 After that, create a commit inside the submodule and then push it
 ```
 cd vendor/temo
-git add --patch .
+git add --patch
 git commit --message "....."
 git push origin HEAD:master
+```
+
+### Update subbmodule(s)
+```
+git submodule foreach git pull origin master
+git add --patch
+git commit -m "Update submodules"
 ```
