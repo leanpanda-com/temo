@@ -45,3 +45,14 @@ and override this variable into your `application.sass` variable.
 $images-prefix-path: './'
 $custom-background-icons("my-icon":"file-name.svg")
 ```
+
+## Contributions
+### Create new commits
+If you have some fixes to do in TEMO, you can edit files directly into your submodule directory.
+After that, create a commit inside the submodule and then push it
+```
+cd vendor/temo
+git add --patch .
+git commit --message "....."
+git push origin HEAD:master
+```
