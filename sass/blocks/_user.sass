@@ -3,7 +3,11 @@
   justify-content: space-between
   align-items: center
   min-width: 150px
+  width: 100%
   position: relative
+  
+  +at-breakpoint(desk)
+    width: 200px
 
 .user__image
   flex: 0 0 40px
@@ -16,7 +20,13 @@
 
 .user__name
   +font-size(eta) 
-  flex: 1 0
+  flex: 1 0 125px
+  max-width: 125px
+
+  div
+    max-width: 100%
+    text-overflow: ellipsis
+    overflow: hidden
 
 .user__actions
   flex: 0 0 auto
