@@ -3,7 +3,19 @@
   align-items: center
 
   & > * + *
-    +margin-left(1)
+    +margin-left(2)
+
+    +at-breakpoint(desk)
+      +margin-left(1)
+
+  .icon
+    width: 20px
+    height: 20px
+    
+    +at-breakpoint(lte-tab)
+      width: 25px
+      height: 25px
+
 
 .icon
   width: 20px
