@@ -12,6 +12,7 @@ Create a symlink under app/javascript/stylesheets
 ```
 cd app/javascript/stylesheets
 ln -s ../../../vendor/temo/sass temo
+cd ../../..
 ```
 
 Copy icons
