@@ -4,7 +4,7 @@
 ### Rails
 Install the submodule in vendor directory
 ```
-git submodule add git@github.com:cantierecreativo.net/temo.git vendor/temo
+git submodule add git@github.com:leanpanda-com/temo.git vendor/temo
 ```
 
 Create a symlink under app/javascript/stylesheets
