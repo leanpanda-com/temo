@@ -35,8 +35,21 @@ import 'stylesheets/application'
 If you need to use simple_form
 ```
 cp vendor/temo/simple_form_initializer.rb config/initializers/simple_form.rb
+mkdir -p app/inputs
+cp vendor/temo/simple_form/inputs/* app/inputs
+mkdir -p app/form_builders
+cp vendor/temo/simple_form/form_builders/* app/form_builders
 ```
 
+and this method in `app/helpers/application_helper.rb
+```
+module ApplicationHelper
+  def simple_form_for(record, options = {}, &block)
+    options[:builder] ||= TemoFormBuilder
+    super(record, options, &block)
+  end
+end
+```
 
 ## Configuration
 ### Add custom icons
