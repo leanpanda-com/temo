@@ -1,0 +1,37 @@
+.dropdown
+  position: relative
+
+.dropdown__toggler
+
+.dropdown__content
+  +padding(2)
+  position: absolute
+  background-color: white
+  display: none
+  box-shadow: $card-base-shadow
+  border-radius: $card-border-radius
+  z-index: 1000
+  left: 50%
+  transform: translateX(-50%)
+  min-width: 100%
+
+  .is-open &
+    display: block
+
+.dropdown__button
+  @extend .button
+  @extend .button--primary
+  margin: 0 !important
+
+  &:after
+    margin-left: 5px
+    color: white
+    display: block
+    content: " "
+    background-image: icon-url('dropdown-menu-white.svg')
+    background-size: 20px 20px
+    height: 20px
+    width: 20px
+
+    .is-open &
+      transform: rotate(180deg)
