@@ -3,25 +3,32 @@
 
 .dropdown__toggler
 
-.dropdown__content
-  +padding(2)
-  position: absolute
-  background-color: white
-  display: none
-  box-shadow: $card-base-shadow
-  border-radius: $card-border-radius
-  z-index: 1000
-  left: 50%
-  transform: translateX(-50%)
-  min-width: 100%
+.dropdown__button
+  border: 0
+  cursor: pointer
+  display: inline-flex
+  align-items: center
+  box-shadow: 0 1px 3px -1px rgba($black-color,.3)
+  border-radius: $button-border-radius
+  background-color: $primary-color
+  color: $white-color
+  +font-size($base-font-size)
+  +horizontal-padding(2)
+  +vertical-padding(1)
+  vertical-align: middle
+  font-weight: 700
+  width: 100%
+  margin: 0 !important
+
+  .icon
+    margin-left: 0
+
+  &:hover, &:focus
+    color: $white-color
+    text-decoration: none
 
   .is-open &
-    display: block
-
-.dropdown__button
-  @extend .button
-  @extend .button--primary
-  margin: 0 !important
+    border-radius: $card-border-radius $card-border-radius 0 0
 
   &:after
     margin-left: 5px
@@ -29,9 +36,39 @@
     display: block
     content: " "
     background-image: icon-url('dropdown-menu-white.svg')
-    background-size: 20px 20px
-    height: 20px
-    width: 20px
+    background-size: 10px 10px
+    height: 10px
+    width: 10px
+    vertical-align: middle
+    position: absolute
+    right: 10px
 
     .is-open &
       transform: rotate(180deg)
+
+.dropdown__content
+  position: absolute
+  background-color: $primary-color
+  color: $white-color
+  display: none
+  box-shadow: $card-base-shadow
+  border-radius: 0 0 $card-border-radius $card-border-radius
+  z-index: 1000
+  left: 50%
+  transform: translateX(-50%)
+  min-width: 100%
+
+  li
+    +horizontal-padding(2)
+    +vertical-padding(1)
+
+    &:hover
+      background-color: #113E68
+
+  a
+    font-weight: 700
+    color: $white-color
+    text-decoration: none
+
+  .is-open &
+    display: block
