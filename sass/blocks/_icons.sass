@@ -20,13 +20,17 @@
 .icon
   width: 20px
   height: 20px
+  -webkit-mask-repeat: no-repeat
   mask-repeat: no-repeat
+  -webkit-mask-position: center
   mask-position: center
+  -webkit-mask-size: contain
   mask-size: contain
   background: currentcolor
 
 @each $icon, $value in $background-icons
   [data-icon=#{$icon}]
+    -webkit-mask-image: icon-url($value)
     mask-image: icon-url($value)
 
 // Icon Sizes
