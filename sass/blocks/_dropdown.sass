@@ -4,6 +4,7 @@
 .dropdown__toggler
 
 .dropdown__button
+  @include button-size($button-padding-vertical, $button-padding-horizontal, $base-font-size)
   border: 0
   cursor: pointer
   display: inline-flex
@@ -12,9 +13,6 @@
   border-radius: $button-border-radius
   background-color: $primary-color
   color: $white-color
-  +font-size($base-font-size)
-  +horizontal-padding(2)
-  +vertical-padding(1)
   vertical-align: middle
   font-weight: 700
   width: 100%
