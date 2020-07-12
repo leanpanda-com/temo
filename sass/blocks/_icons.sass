@@ -1,22 +1,3 @@
-.icon__list
-  display: flex
-  align-items: center
-
-  & > * + *
-    +margin-left(2)
-
-    +at-breakpoint(desk)
-      +margin-left(1)
-
-  .icon
-    width: 20px
-    height: 20px
-    
-    +at-breakpoint(lte-tab)
-      width: 25px
-      height: 25px
-
-
 .icon
   width: 20px
   height: 20px
@@ -27,6 +8,20 @@
   -webkit-mask-size: contain
   mask-size: contain
   background: currentcolor
+
+  +siblings-horizontal-margin(2)
+
+  +at-breakpoint(desk)
+    +siblings-horizontal-margin(1)
+
+  .icon__list &
+    +at-breakpoint(lte-tab)
+      width: 25px
+      height: 25px
+
+.icon__list
+  display: flex
+  justify-content: center
 
 @each $icon, $value in $background-icons
   [data-icon=#{$icon}]

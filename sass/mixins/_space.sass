@@ -24,6 +24,14 @@
   +margin-left($value)
   +margin-right($value)
 
+@mixin siblings-horizontal-margin($value)
+  &:not(:first-child)
+    +margin-left($value)
+  &:not(:last-child)
+    +margin-right($value)
+  & + &
+    +margin-left(0)
+
 @mixin vertical-margin($value)
   +margin-top($value)
   +margin-bottom($value)
