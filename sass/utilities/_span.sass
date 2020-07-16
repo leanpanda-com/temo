@@ -1,0 +1,4 @@
+@if $enable-span-colored
+  @each $color, $value in $all-colors
+    .span--#{$color}
+      color: $value
