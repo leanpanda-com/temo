@@ -1,13 +1,22 @@
 .breadcrumbs
   display: flex
+  align-content: center
   +vertical-padding(2)
 
 .breadcrumbs__item
+  display: flex
+  align-items: center
+
   &:not(:last-child)
     +margin-right(1)
 
-  .icon
-    display: inline-block
-
 .breadcrumbs__link
   color: $primary-color
+
+.breadcrumbs__separator
+  .icon
+    width: 8px
+    height: 8px
+
+  .breadcrumbs__item:last-child &
+    display: none
