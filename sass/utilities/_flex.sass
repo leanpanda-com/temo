@@ -27,6 +27,10 @@
     @extend .flex
     flex-direction: column-reverse
 
+  .flex--nowrap
+    @extend .flex
+    flex-wrap: nowrap
+
   @each $content, $value in $flex-contents
     .flex--justify-#{$content}
       @extend .flex
