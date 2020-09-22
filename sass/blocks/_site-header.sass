@@ -18,19 +18,30 @@
 .site-header__right
   +vertical-padding(2)
   +horizontal-padding(3)
-  display: flex
   align-items: center
+  display: flex
 
 .site-header__left
-  +at-breakpoint(lte-tab)
-    width: 100%
-    justify-content: space-between
+  +vertical-padding(2)
+  +horizontal-padding(3)
+  align-items: center
+  display: flex
+  width: 100%
+  justify-content: space-between
+
+  +at-breakpoint($canvas-visible-breakpoint)
+    width: auto
+    justify-content: flex-start
 
 .site-header__right
-  margin-left: auto
-  
-  +at-breakpoint(lte-tab)
-    display: none
+  +vertical-padding(2)
+  +horizontal-padding(3)
+  align-items: center
+  display: none
+
+  +at-breakpoint($canvas-visible-breakpoint)
+    margin-left: auto
+    display: flex
 
 .site-header__links
   display: flex
@@ -40,8 +51,8 @@
   width: 30px
   height: 30px
   +margin-right(2)
-  
-  +at-breakpoint(lap)
+
+  +at-breakpoint($canvas-visible-breakpoint)
     display: none
 
 .site-header__menu-open,
