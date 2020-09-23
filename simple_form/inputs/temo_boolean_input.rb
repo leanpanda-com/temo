@@ -13,7 +13,7 @@ class TemoBooleanInput < SimpleForm::Inputs::BooleanInput
 
   def label
     @builder.label(label_target, class: "form__label boolean") do
-      template.content_tag(:span, label_text)
+      template.tag.span(label_text)
     end
   end
 
