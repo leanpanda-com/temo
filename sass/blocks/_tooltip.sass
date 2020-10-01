@@ -50,6 +50,16 @@
     &:hover
       opacity: .5
 
+.tooltip--visible
+  @extend .tooltip
+
+  &::before, &:after
+    visibility: visible
+    opacity: 1
+  a
+    &:hover
+      opacity: .5
+
 .tooltip--top
   @extend .tooltip
 
