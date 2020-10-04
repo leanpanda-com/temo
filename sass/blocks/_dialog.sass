@@ -31,10 +31,15 @@
   .is-active &
     transform: translate(-50%, -50%) scale(1)
 
+.dialog__frame--compact
+  @extend .dialog__frame
+  width: 33%
+  text-align: center
 
 .dialog__header
   @extend .card__header
   position: relative
+  +padding-top(5)
 
 @if $enable-dialog-colored
   @each $color, $value in $all-colors
