@@ -220,22 +220,43 @@
 .radio
   display: block
   label
-    @extend .form__label.boolean
-    &::before     
+    +padding-left(2.5)
+    position: relative
+
+    &::before
+      content: ""
+      border: 1px solid $gray-color
+      display: inline-block
+      height: 16px
+      width: 16px
+      vertical-align: middle
+      position: absolute
+      left: 0
+      top: 50%
+      margin-top: -8px
+      transition: all 0.1s ease
+      cursor: pointer
       border-radius: 50%
-    &::after     
-      width: 6px
-      height: 6px
+
+    &::after
+      content: ""
+      position: absolute
+      display: block
+      opacity: 0
+      transition: all 0.2s ease
       top: 7px
       left: 5px
-      margin: 0
-      border-radius: 100%
-      background: $white-color
+      height: 6px
+      width: 6px
       transform: scale(1)
+      border-bottom: 2px solid $white-color
+      border-left: 2px solid $white-color
+      border-radius: 100%
+      margin: 0
+      background: $white-color
 
-    
-
-
+    &:hover::before
+      border: 1px solid $black-l-color
 
 @each $input in $inputs-list
   #{$input}.form__input
